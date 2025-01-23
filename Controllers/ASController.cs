@@ -40,7 +40,12 @@ namespace ASbackend.Controllers
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
 
-            return Ok();
+            var token = TokenService.GenerateToken(user);
+
+            return Ok(new
+            {
+                token = token
+            });
         }
 
         [HttpPost]

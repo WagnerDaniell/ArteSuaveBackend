@@ -128,3 +128,4 @@ C:\Users\wagne\Desktop\ArteSuave3.0\ASbackend\bin\Debug\net9.0\Microsoft.Identit
 C:\Users\wagne\Desktop\ArteSuave3.0\ASbackend\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\wagne\Desktop\ArteSuave3.0\ASbackend\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\wagne\Desktop\ArteSuave3.0\ASbackend\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\wagne\Desktop\ArteSuave3.0\ASbackend\obj\Debug\net9.0\ASbackend.sourcelink.json
