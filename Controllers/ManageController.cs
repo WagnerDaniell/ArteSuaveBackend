@@ -1,28 +1,24 @@
 using ASbackend.Models;
+using ASbackend.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASbackend.Controllers
-{   
+{
     [ApiController]
     [Route("api/as")]
-    public class ControllerDeleteUser : ControllerBase
-    {   
+    public class ASController : ControllerBase
+    {
         private readonly Context _context;
 
-        public ControllerDeleteUser (Context context)
+        public ASController(Context context)
         {
             _context = context;
-        }
+        } 
 
-        [HttpGet("{Id}")]
-        public async Task<ActionResult<User>> PegarPessoapeloIdAsync(Guid Id){
-            User? pessoa = await _context.Users.FindAsync (Id);
-
-            if (pessoa == null)
-                return NotFound();
-
-            return Ok(pessoa);
-
+        [HttpGet("viewall")]
+        public async Task<ActionResult<IEnumerable<User>>> Viewallusers(){
+            return await _context.Users.ToListAsync();
         }
 
         [HttpDelete("{Id}")]
@@ -38,5 +34,5 @@ namespace ASbackend.Controllers
 
             return Ok();
         }
-    }
-}
+    };
+};
