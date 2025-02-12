@@ -13,9 +13,9 @@ namespace ASbackend.Controllers
         {
             _context = context;
         }
-
-        [HttpGet("{Id}")]
-        public async Task<ActionResult<User>> PegarPessoapeloIdAsync(Guid Id){
+        /*
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<User>> UpdateUser(Guid Id, [FromBody] User update){
             User? pessoa = await _context.Users.FindAsync (Id);
 
             if (pessoa == null)
@@ -24,5 +24,6 @@ namespace ASbackend.Controllers
             return Ok(pessoa);
 
         }
+        */
     };
 };
