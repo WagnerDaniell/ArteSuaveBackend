@@ -13,17 +13,31 @@ namespace ASbackend.Controllers
         {
             _context = context;
         }
-        /*
         [HttpPut("{Id}")]
-        public async Task<ActionResult<User>> UpdateUser(Guid Id, [FromBody] User update){
-            User? pessoa = await _context.Users.FindAsync (Id);
+        public async Task<ActionResult<dynamic>> UpdateUser(Guid Id, [FromBody] User Update)
+        {
+            User ? ExistingUser =  await _context.Users.FindAsync(Id);
 
-            if (pessoa == null)
-                return NotFound();
+            if(ExistingUser == null){
+                return BadRequest("User not found!");
+            };
 
-            return Ok(pessoa);
+            ExistingUser.Email = Update.Email;
+            ExistingUser.fullname = Update.fullname;
+            ExistingUser.cpf = Update.cpf;
+            ExistingUser.age = Update.age;
+            ExistingUser.adress = Update.adress;
+            ExistingUser.duedate = Update.duedate;
+            ExistingUser.injuryhistory = Update.injuryhistory;
+            ExistingUser.numberemergency = Update.numberemergency;
+            ExistingUser.numberphone = Update.numberphone;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(
+                "Funcionou vei"
+            );
 
         }
-        */
     };
 };
