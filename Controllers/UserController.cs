@@ -34,9 +34,7 @@ namespace ASbackend.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok(
-                "Funcionou vei"
-            );
+            return NoContent();
 
         }
     };
