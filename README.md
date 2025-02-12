@@ -12,3 +12,6 @@ Este é o backend da aplicação Arte Suave, um site desenvolvido para uma ONG. 
 - JWT (JSON Web Tokens) para autenticação e autorização
 - PostgreSQL para o banco de dados
 - Entity Framework Core para interação com o banco de dados
+
+**Observações**
+- Ainda falta a controller de atualização de User
